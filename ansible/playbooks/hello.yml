@@ -1,15 +1,7 @@
-192.168.2.109
-192.168.2.120
-192.168.2.121
+---
+- hosts: all
+  gather_facts: false
 
-[node1]
-  192.168.2.120
-
-[node2]
-  192.168.2.121
-
-[test]
-  192.168.2.120
-  192.168.2.121
-
-
+  tasks:
+    - name: first step
+      debug: msg="Hello World"
