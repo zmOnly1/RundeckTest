@@ -1,0 +1,36 @@
+- defaultTab: nodes
+  description: ''
+  executionEnabled: true
+  group: jobs
+  id: f8f3b511-f86b-43a5-9a15-acdf2b565271
+  loglevel: INFO
+  name: Hello
+  nodeFilterEditable: false
+  nodefilters:
+    dispatch:
+      excludePrecedence: true
+      keepgoing: false
+      rankOrder: ascending
+      successOnEmptyNodeFilter: false
+      threadcount: '1'
+    filter: .*
+  nodesSelectedByDefault: true
+  plugins:
+    ExecutionLifecycle: null
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - configuration:
+        ansible-base-dir-path: /opt/rundeck/projects/HelloWorld/scm/RundeckTest/ansible/config
+        ansible-become: 'false'
+        ansible-playbook: /opt/rundeck/projects/HelloWorld/scm/RundeckTest/ansible/playbooks/hello.yml
+        ansible-ssh-auth-type: privateKey
+        ansible-ssh-key-storage-path: keys/master/privatekey
+        ansible-ssh-passphrase-option: option.password
+        ansible-ssh-use-agent: 'false'
+      nodeStep: true
+      type: com.batix.rundeck.plugins.AnsiblePlaybookWorflowNodeStep
+    keepgoing: false
+    strategy: node-first
+  uuid: f8f3b511-f86b-43a5-9a15-acdf2b565271
+
